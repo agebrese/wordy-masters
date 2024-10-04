@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+  }
+
+
+
+body{
+    padding: 0;
+    margin: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.scorecard{
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    width: 500px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid black;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.box{
+    width: 80px;
+    height: 80px;
+    margin: 10px 5px;
+    border: 5.5px solid #CCCCCC;
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.correctLetter{
+    background-color: #CA9A1E;
+    color: white;
+
+}
+
+.correctSpot{
+    background-color: #006400;
+    color: white;
+}
+
+.wrong{
+    background-color:#888888;
+    color: white;
+}
+
+.invalidWord{
+    animation-name: blinking;
+    animation-duration: 1500ms;
+    animation-iteration-count: 2;
+    transition: border .5s solid red;
+
+
+}
+
+@keyframes blinking{
+    50%{
+        border-color: red;
+    }
+}
+
+.spinAnimation{
+    height: 60px;
+    width: 60px;
+    border: 4px solid;
+    border-color: blue transparent blue transparent;
+    border-radius:  50%;
+    align-self: center;
+    justify-self: center;
+    animation: spin .3s linear infinite;
+}
+
+@keyframes spin{
+    0% {border-color: red transparent red transparent;}
+    16% {border-color: orange transparent orange transparent;}
+    32% {border-color: yellow transparent yellow transparent;}
+    48% {border-color: green transparent green transparent;}
+    64% {border-color: blue transparent blue transparent;}
+    80% {border-color: indigo transparent indigo transparent;}
+    100% {border-color: violet transparent violet transparent;}
+    to{
+
+        transform: rotate(360deg);
+    }
+
+}
+
+.winner{
+    animation: win 2.5s infinite;
+}
+
+@keyframes win{
+    0% {color: red;}
+    16% {color: orange;}
+    32% {color: yellow;}
+    48% {color: green;}
+    64% {color: blue;}
+    80% {color: indigo;}
+    100% {color: violet;}
+
+}
